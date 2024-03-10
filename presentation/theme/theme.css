@@ -1,0 +1,30 @@
+
+.slide-logo {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 10px !important;
+  max-height: 20% !important;
+  height: 100% !important;
+  width: auto !important;
+  color: $body-color !important;
+}
+
+.purple {
+  color: #935d94 ;
+  font-weight: bold;
+}
+
+.purple-emph {
+  color: #935d94 ;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.purple-backgoround{
+  background-color:#935d94
+}
+
+.center{
+  text-align: center;
+}

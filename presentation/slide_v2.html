@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slide_v2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slide_v2_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slide_v2_files/libs/quarto-html/popper.min.js"></script>
+<script src="slide_v2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slide_v2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slide_v2_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="slide_v2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.0.37">
+
+  <title>slide_v2</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slide_v2_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slide_v2_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="slide_v2_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="theme/theme.css">
+  <link href="slide_v2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slide_v2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slide_v2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slide_v2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="TitleSlide" class="slide level2" data-menu-title="Welcome" data-background-color="#935d94" style="font-size:80px;padding: 5px ">
+<h2>Welcome to Become a Disease Detective ! 🔍</h2>
+<p>Organised by</p>
+<p>R Ladies Melbourne</p>
+</section>
+<section id="acknowledgement-of-country" class="slide level2 center">
+<h2>Acknowledgement of Country</h2>
+</section>
+<section id="we-are" class="slide level2">
+<h2>We are…</h2>
+<p>Caitlin, Dionne and Lauren and we are from</p>
+<p><span class="purple">R Ladies Melbourne</span>.</p>
+<p>We are here to teach you how to code in <span class="purple">R</span>!</p>
+</section>
+<section id="what-is-coding-and-what-is-r" class="slide level2">
+<h2>What is <span class="purple-emph">coding</span> and what is <span class="purple-emph">R</span> ?</h2>
+<div class="fragment">
+<p><span class="purple">Coding</span> is writing instructions that a machine or computer can understand to perform a task.</p>
+</div>
+<div class="fragment">
+<div style="font-size: 1.5em; fig-align: center;layout-nrow=1">
+<p><img data-src="Rlogo.png" width="200" alt="R"> <img data-src="Pythonlogo.png" width="360" alt="python"> <img data-src="JavaLogo.png" width="230" alt="java"> <img data-src="cpplogo.png" width="130" alt="cpp"></p>
+</div>
+</div>
+<div class="fragment">
+<p><span class="purple">R</span> is coding language used in statistics, data science and many other disciplines. It is also very powerful tool for visualising data.</p>
+</div>
+</section>
+<section id="why-should-you-learn-r" class="slide level2 center">
+<h2>Why should you <span class="purple">learn R</span> ?</h2>
+<div class="fragment">
+<p>⚖️ R is free, open source and everyone can access</p>
+</div>
+<div class="fragment">
+<p><br>
+🥳 It can do so many things</p>
+</div>
+<div class="fragment">
+<p><br>
+📚 Lots of resources to learn and perform tasks, with a very large user community</p>
+</div>
+<div class="fragment">
+<p><br>
+🧑‍🎓 You can get a super cool job ! It’s a fantastic skill that is highly sought after in the work force.</p>
+</div>
+</section>
+<section id="what-will-you-learn-today" class="slide level2 center">
+<h2>What will you learn today ?</h2>
+<div class="fragment">
+<p><br>
+</p>
+<p>🗺️ What is an <span class="purple">infectious disease</span>, what is an <span class="purple">outbreak</span> and who are <span class="purple">disease detectives</span>?</p>
+</div>
+<div class="fragment">
+<p><br>
+🔍 How can <span class="purple">R</span> be used to investigate outbreaks ?</p>
+</div>
+<div class="fragment">
+<p><br>
+<span class="purple-emph">Then YOU! are going to solve an outbreak !</span></p>
+</div>
+</section>
+<section id="what-are-infectious-diseases" class="slide level2">
+<h2>What are infectious diseases ?</h2>
+<p><br>
+🦠 Infectious diseases are caused by certain microorganisms, such as <span class="purple-emph">bacteria, viruses, parasites or fungi</span>, and will make people (or animals) sick when they are exposed to these microorganisms.</p>
+<div class="fragment">
+<p>💭 Most microorganisms don’t make us sick, but some do, and these are known as <span class="purple-emph">pathogens</span>.</p>
+</div>
+<div class="fragment">
+<p>🤧 There are lots of different ways that you might get an infectious disease. Some ways include breathing <span class="purple">respiratory droplets</span>, eating <span class="purple">contaminated food or water</span>, insect <span class="purple">bites</span> and many many more !</p>
+</div>
+</section>
+<section id="when-do-infectious-diseases-cause-outbreaks" class="slide level2">
+<h2>When do infectious diseases cause outbreaks ?</h2>
+<p>📚The <span class="purple">World Health Organisation</span> definition of an <span class="purple">outbreak</span>:</p>
+<div class="fragment">
+<p>💡 <span class="purple.emph">“occurence of disease in excess of normal”</span></p>
+</div>
+<div class="fragment">
+<p>This might be because of a new pathogen, bringing pathogens to new areas, a mutating pathogen.</p>
+</div>
+<div class="fragment">
+<p><br>
+Many infectious diseases now have vaccines that mean outbreaks to these pathogens occur much less frequently (for example: measles, chicken pox, influenza etc.)</p>
+</div>
+</section>
+<section id="lets-go-through-some-examples-of-infectious-disease-outbreaks-viruses" class="slide level2" data-menu-title="Examples of infectious diseases !" data-background-color="#935d94" style="font-size:60px;padding: 5px ">
+<h2>Let’s go through some examples of infectious disease outbreaks: viruses !</h2>
+</section>
+<section id="the-covid-19-pandemic-of-2019" class="slide level2">
+<h2>The COVID-19 pandemic of 2019</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="TIME_March2020.png" width="300"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li class="fragment"><p>The COVID-19 pandemic was caused by a virus known as <span class="purple">SARS-CoV2</span>. It caused a global <span class="purple">pandemic.</span></p></li>
+<li class="fragment"><p>A <span class="purple">pandemic</span> is defined as an infectious disease affecting multiple parts of the world simultaneously, i.e.&nbsp;multiple countries are experiencing an <span class="purple">epidemic</span></p></li>
+<li class="fragment"><p>There are now several vaccines that have helped to reduce the severity of this infection</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="norovirus-outbreak-2023" class="slide level2">
+<h2>Norovirus Outbreak 2023</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="norovirus2023.png" width="500"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Norovirus causes <span class="purple">vomitting</span> and <span class="purple">diarrhoaea</span> (you might call this gastro)</p></li>
+<li class="fragment"><p>It is extremely stable in the environment and highly contagious</p></li>
+<li class="fragment"><p><span class="purple">Ingesting</span> norovirus causes disease</p></li>
+<li class="fragment"><p>There is <span class="purple">no vaccine</span> available for norovirus</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="what-about-bacteria" class="slide level2" data-menu-title="What about bacteria" data-background-color="#935d94" style="font-size:60px;padding: 5px ">
+<h2>What about bacteria!</h2>
+</section>
+<section id="buruli-ulcer" class="slide level2">
+<h2>Buruli ulcer</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="buruli.jpg" width="500"></p>
+<p></p><figcaption>Image: Institut Pasteur</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><p>Buruli ulcer is caused by a bacteria known as <span class="purple"><em>Mycobacterium ulcerans</em></span></p></li>
+<li class="fragment"><p>The bacteria is <span class="purple">slow growing and flesh eating</span> and is <span class="purple">endemic</span> to Melbourne and surrounds</p></li>
+<li class="fragment"><p><span class="purple">Endemic</span> means that there is an ongoing transmission of a pathogen in that area</p></li>
+<li class="fragment"><p>Mode of transmission not entirely understood but likely involves <span class="purple">mosquitoes</span> and <span class="purple">possums</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="who-studies-outbreaks" class="slide level2">
+<h2>Who studies outbreaks</h2>
+<ul>
+<li class="fragment"><p><span class="purple">Public health departments</span> in the government</p>
+<ul>
+<li class="fragment">How to improve the health of everyone</li>
+</ul></li>
+<li class="fragment"><p><span class="purple">Academic research</span> at Research Institutes and Universities</p>
+<ul>
+<li class="fragment">Make new discoveries, such as developing new drugs or vaccines</li>
+</ul></li>
+<li class="fragment"><p><span class="purple">Doctors</span> and <span class="purple">health staff</span></p>
+<ul>
+<li class="fragment">Keep their patients safe</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>And many others too !</p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>An <span class="purple">epidemiologist</span> is someone who studies how…</p>
+<div class="fragment">
+<p><br>
+</p>
+<p>“to keep the public informed on different public health issues and offer solutions to keep communities safe. They perform studies on outbreaks, their causes, transmission and effect on the public, collating that information into accessible data and health recommendations.”</p>
+<p>Source: <a href="https://online.monash.edu/news/what-is-epidemiology-what-does-an-epidemiologist-do/">What is epidemiology and what does an epidemiologist do?</a></p>
+</div>
+</section>
+<section id="what-do-we-need-to-know-about-outbreaks" class="slide level2">
+<h2>What do we need to know about outbreaks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><p>What is the problem ?</p></li>
+<li class="fragment"><p>What is the cause?</p></li>
+<li class="fragment"><p>What can we do to make the situation better ?</p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+
+</div>
+</div>
+</section>
+<section>
+<section id="you-are-a-disease-detective-for-today-and-you-must-help-us-solve-a-mysterious-outbreak" class="title-slide slide level1 center">
+<h1>You are a <span class="purple-emph">disease detective</span> for today and you must help us solve a mysterious outbreak !</h1>
+
+</section>
+<section id="the-situation" class="slide level2">
+<h2>The situation</h2>
+<p>Unknown illness causes students to <span class="purple">fall ill</span> at local school.</p>
+<p><em>Local authorities are unsure of the cause of this outbreak, but it appears to be linked to a recent excursion to Melbourne CBD</em></p>
+</section>
+<section id="the-excursion" class="slide level2">
+<h2>The <span class="purple">excursion</span></h2>
+<p>A few days earlier, students at a local school went into Melbourne to see an exhibition at the National Gallery of Victoria.</p>
+<p><br>
+🚌 At 8am, they took the bus to the NGV.</p>
+<div class="fragment">
+<p>🎨 They were in the gallery from 9am - 12pm.</p>
+</div>
+<div class="fragment">
+<p>🍲 They had lunch from 12pm - 2pm at three different locations</p>
+</div>
+<div class="fragment">
+<p>🧑‍🎨 They went back to the gallery for another exhibition between 2 -4 pm</p>
+</div>
+<div class="fragment">
+<p>🏡 At 4pm they were back on the bus to go home</p>
+</div>
+</section>
+<section id="you-are-here-to-investigate" class="slide level2">
+<h2>You are here to investigate…</h2>
+<p>And you have been given some information including:</p>
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Name</p></li>
+<li class="fragment"><p>Class</p></li>
+<li class="fragment"><p>Age</p></li>
+<li class="fragment"><p>Sex</p></li>
+</ul>
+</div>
+<ul>
+<li class="fragment"><p>Height</p></li>
+<li class="fragment"><p>Weight</p></li>
+<li class="fragment"><p>Was the student feeling sick</p></li>
+<li class="fragment"><p>What were their symptoms</p></li>
+</ul>
+<div class="fragment">
+<p><span class="purple-emph">And we are going to do this in R !</span></p>
+</div>
+</section></section>
+<section>
+<section id="lets-learn-some-basics" class="title-slide slide level1 center" data-background-color="#935d94">
+<h1>Let’s learn some basics</h1>
+
+</section>
+<section id="r-can-be-our-calculator" class="slide level2">
+<h2>R can be our <span class="purple">calculator</span></h2>
+<div class="fragment">
+<p>Addition (use <span class="purple">+</span>)</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Multiplication (use <span class="purple">*</span>)</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Division (use <span class="purple">/</span>)</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">150</span><span class="sc">/</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>…anything is possible</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>((<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)<span class="sc">*</span><span class="dv">8</span>)<span class="sc">/</span><span class="dv">123</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3252033</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-you-try-some-basic-maths" class="slide level2 center">
+<h2>Now <span class="purple">you try</span> some basic maths</h2>
+<p>Type in your numbers either within the <code>workshop.R</code> file or within the <code>console</code>.</p>
+<div class="fragment">
+<p>Then to run - click <code>Run</code> at the top of the <code>.R</code> script or type <code>ctrl/cmd</code> + <code>enter</code></p>
+</div>
+<div class="fragment">
+<p>The answer prints in the <code>console</code></p>
+</div>
+</section>
+<section id="what-does-rstudio-look-like" class="slide level2">
+<h2>What does RStudio look like?</h2>
+
+<img data-src="RStudio.png" class="r-stretch"></section>
+<section id="r-can-be-our-notebook" class="slide level2">
+<h2>R can be our <span class="purple">notebook</span></h2>
+<p>We can <span class="purple">save</span> important information for later.<br>
+</p>
+<p>We can use <code>&lt;-</code> or <code>=</code><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>my_name <span class="ot">&lt;-</span> <span class="st">"Caitlin"</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">paste</span>(<span class="st">"My name is"</span>, my_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "My name is Caitlin"</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>several_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Caitlin"</span>, <span class="st">"Dionne"</span>, <span class="st">"Lauren"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">paste</span>(<span class="st">"My name is"</span>, several_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "My name is Caitlin" "My name is Dionne"  "My name is Lauren" </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><span class="purple">Your turn !</span><br>
+</p>
+</div>
+</section>
+<section id="the-same-goes-for-numbers" class="slide level2">
+<h2>The same goes for <span class="purple">numbers</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1|2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>a_number <span class="ot">&lt;-</span> <span class="dv">137</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>another_number <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>a_number <span class="sc">*</span> another_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16440</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>a_number <span class="sc">/</span> another_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.141667</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>(<span class="dv">2</span><span class="sc">*</span>a_number) <span class="sc">+</span> another_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 394</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Try saving a number or a word to a meaningful name - can you see where it goes?</p>
+</div>
+</section>
+<section id="now-to-solve-an-outbreak" class="slide level2" data-menu-title="Welcome" data-background-color="#935d94" style="font-size:80px;padding: 5px ">
+<h2>Now to solve an outbreak !</h2>
+</section>
+<section id="where-to-start" class="slide level2">
+<h2>Where to start?</h2>
+<p>First we need to load in the data and some tools that are going to help us.</p>
+<div class="cell">
+
+</div>
+<p>One of the great things about R is that there are lots of pre-installed commands that we can access or ones that others help to create and we can access. These are our packages that we access with the <code>library()</code> command.</p>
+</section>
+<section id="what-is-outbreak_data" class="slide level2">
+<h2>What is <code>outbreak_data</code>?</h2>
+<p>💡The number one step in data analysis is looking at the data</p>
+<aside class="notes">
+<p>Potentially highlight analogies here like reading a full recipe and seeing what ingredients you have or need to buy</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<p>For this, we are going to use our first pre-installed command called <code>colnames()</code>.</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">colnames</span>(outbreak_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "firstname"           "class"               "height"             
+ [4] "weight"              "age"                 "sex"                
+ [7] "temperature"         "sickness"            "shortness_of_breath"
+[10] "chills"              "palpitation"         "bloody_stools"      
+[13] "pain_chest"          "abdominal_cramps"    "dizziness"          
+[16] "nausea"              "vomiting"            "vertigo"            
+[19] "cough"               "fever"               "diarrhea"           
+[22] "constipation"        "headache"            "pain_abdominal"     
+[25] "throat_sore"         "muscle_pains"       </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>❓Can you find <code>outbreak_data</code> in the environment pane?</p>
+</div>
+<div class="fragment">
+<p>🧐 What happens if you click on it there?</p>
+</div>
+</section>
+<section id="different-kinds-of-data" class="slide level2">
+<h2>Different kinds of data</h2>
+<p>In <code>outbreak_data</code> we have several kinds of information and it’s important to identify what these are !</p>
+<div class="fragment">
+<ul>
+<li class="fragment"><p>How would you describe what data we have in <code>Firstname</code>?</p></li>
+<li class="fragment"><p>How is this different to <code>Weight</code> ?</p></li>
+<li class="fragment"><p>What are some terms we could use to define these ?</p></li>
+</ul>
+</div>
+</section>
+<section id="visualising-data" class="slide level2">
+<h2>Visualising data</h2>
+<p>The types of data we have to work with will determine how it is best to visualise !</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>A <span class="purple">scatter plot</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="slide_v2_files/figure-revealjs/scatter%20plot-1.png" width="960"></p>
+</div>
+</div>
+<p><span style="font-size:30px;padding: 5px">Notice both the x and the y-axis are things we can count or measure.</span></p>
+</div><div class="column" style="width:45%;">
+<p>A <span class="purple">boxplot</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="slide_v2_files/figure-revealjs/boxplot-1.png" width="960"></p>
+</div>
+</div>
+<p><span style="font-size:30px;padding: 5px">Notice the y-axis are things we count or measure but the x-axis are specific groups.</span></p>
+</div>
+</div>
+</section>
+<section id="lets-plot-our-outbreak_data" class="slide level2">
+<h2>Let’s plot our <code>outbreak_data</code></h2>
+<p>We will be using a function called <code>ggplot()</code>. This is a fantastic tool we can use to make amazing graphs !</p>
+<p>Like any graph we need to decide:</p>
+<ol type="1">
+<li class="fragment">What do we want on the x-axis?</li>
+<li class="fragment">What do we want on the y-axis?</li>
+<li class="fragment">What kind of graph do we want to make?</li>
+</ol>
+<div class="fragment">
+<p>🧑‍🎨other ideas like colour, design, groups … we’ll get to this later !</p>
+</div>
+</section>
+<section id="how-to-ask-ggplot-to-plot-outbreak_data" class="slide level2">
+<h2>How to ask ggplot to plot <code>outbreak_data</code></h2>
+<p><code>aes</code> is referring to <span class="purple">aesthetics</span>, these are all the things we are going to customise.</p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb21-2"><a href="#cb21-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/ggplot%20start-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><span class="purple">Next we choose what kind of graph we need</span></p>
+</div>
+</section>
+<section id="we-can-use-geom_point-or-geom_boxplot" class="slide level2">
+<h2>We can use <code>geom_point()</code> or <code>geom_boxplot()</code></h2>
+<div class="fragment">
+<p>Let’s first try <code>geom_point()</code>.</p>
+<p>We use the <code>+</code> sign to add it to our first ggplot command</p>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb22-2"><a href="#cb22-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height))<span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</div>
+<div class="fragment">
+<p>Where would we put <code>geom_boxplot()</code> ?</p>
+</div>
+</section>
+<section id="we-can-use-geom_point-or-geom_boxplot-output" class="slide level2 output-location-slide"><h2>We can use <code>geom_point()</code> or <code>geom_boxplot()</code></h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/scatter1-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="now-swap-height-for-temperature-on-the-y-axis" class="slide level2">
+<h2>Now swap <span class="purple">height</span> for <span class="purple">temperature</span> on the y-axis</h2>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb23-2"><a href="#cb23-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/scatter_temp-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-customise" class="slide level2">
+<h2>Let’s <span class="purple">customise !</span></h2>
+<p>Can you change size, shape and colour…what kinds of plots can you make ?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb24-2"><a href="#cb24-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</section>
+<section id="lets-customise-output" class="slide level2 output-location-slide"><h2>Let’s <span class="purple">customise !</span></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<p><img data-src="slide_v2_files/figure-revealjs/scatter_custom-1.png" width="960"></p>
+</div>
+</div></section><section id="can-you-make-a-boxplot-with-class-on-the-x-axis-and-temperature-on-the-y-axis" class="slide level2" data-menu-title="challenge 1" data-background-color="#935d94" style="font-size:70px;padding: 5px ">
+<h2>Can you make a <strong>boxplot</strong> with <strong>class</strong> on the x-axis and <strong>temperature</strong> on the y-axis</h2>
+</section>
+<section id="a-boxplot-summarising-temperature-in-the-four-classes" class="slide level2">
+<h2>A boxplot summarising <span class="purple">temperature</span> in the four <span class="purple">classes</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb25-2"><a href="#cb25-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/boxplot_temp-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="what-does-a-boxplot-tell-us" class="slide level2">
+<h2>What does a boxplot tell us ?</h2>
+<ul>
+<li class="fragment">Provides us with an informative summary of the data in our groups
+<ul>
+<li class="fragment">The center line gives the median</li>
+<li class="fragment">the box below is 25% of the data below the median and the box below is 25% of the data above</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>🧐 If we don’t know what R is doing, we can always get <span class="purple">help !</span></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>?<span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="how-can-we-use-fill-to-learn-more" class="slide level2">
+<h2>How can we use fill to learn more ?</h2>
+<p>The <code>fill</code> can be specified as <span class="purple">aesthetics</span> like the x and y axis.</p>
+<div class="fragment">
+<p>Can you specify the <code>fill</code> with our <code>Sickness</code> information about each student ?</p>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb27-2"><a href="#cb27-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness))<span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/boxplot_temp_sick-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-does-temperature-tell-us-about-how-the-students-were-feeling" class="slide level2" data-menu-title="Are the students feeling sick ?" data-background-color="#935d94" style="font-size:70px;padding: 5px ">
+<h2>🧐 What does temperature tell us about how the students were feeling?</h2>
+<aside class="notes">
+<ul>
+<li><p>Were the temperatures the same for students who were sick and those who weren’t</p></li>
+<li><p>Where the sick students in all classes</p></li>
+<li><p>Why do people get a temperature when they get sick?</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="time-to-give-our-plot-a-title" class="slide level2">
+<h2>Time to give our plot a <span class="purple">title</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb28-2"><a href="#cb28-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness))<span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Make a title here !"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/add_title-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Make it something informative that describes the plot you’ve just made and why people would be interested to look at it</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lets-calculate-some-summaries" class="slide level2">
+<h2>Let’s calculate some summaries</h2>
+<p>This symbol <code>%&gt;%</code> is used to send our data into another command such as <code>summarise()</code></p>
+<div class="fragment">
+<p>As the name would suggest, we can generate summaries, such as calculating the <span class="purple">median</span></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  median
+   &lt;dbl&gt;
+1     37</code></pre>
+</div>
+</div>
+<!-- ## We can make [smaller groups]{.purple} -->
+<!-- This is like how we put the `Class` groups on the x-axis of our plot from earlier, and saw the [median]{.purple} was different in each class -->
+<!-- . . . -->
+<!-- Let's try first to calculate the [median]{.purple} `Temperature` of the four `Classes` -->
+<!-- . . . -->
+<!-- We will use the `group_by()` command to do this as well as the `median()` command -->
+<!-- . . . -->
+<!-- ```{r } -->
+<!-- #| echo: true -->
+<!-- #| output-location: fragment -->
+<!-- #| code-line-numbers: "2|3" -->
+<!-- outbreak_data %>%  -->
+<!--   group_by(Class) %>%  -->
+<!--   summarise(median = median(Temperature)) -->
+<!-- ``` -->
+</div>
+</section>
+<section id="we-can-also-use-group_by-with-multiple-groups" class="slide level2">
+<h2>We can also use <code>group_by()</code> with multiple groups</h2>
+<div class="fragment">
+<p>Just like our boxplot, we want to know the median temperature of the students, grouped by their <code>Class</code> and <code>Sickness</code> status</p>
+</div>
+<div class="fragment">
+<p>👏Try to do this by adding <code>group_by(class, sickness)</code></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">group_by</span>(class, sickness) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</div>
+<div class="fragment">
+<p>How can we relate this to the boxplot we made earlier ?</p>
+</div>
+</section>
+<section id="we-can-also-use-group_by-with-multiple-groups-output" class="slide level2 output-location-slide"><h2>We can also use <code>group_by()</code> with multiple groups</h2><div class="cell output-location-slide">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+# Groups:   class [4]
+  class sickness median
+  &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;
+1 A     no         36.5
+2 A     yes        39  
+3 B     no         37  
+4 B     yes        39  
+5 C     no         37  
+6 C     yes        39  
+7 D     no         37  
+8 D     yes        39  </code></pre>
+</div>
+</div></section><section id="lets-focus-on-the-students-symptoms" class="slide level2 purple">
+<h2>Let’s focus on the student’s symptoms</h2>
+<p>We are going to use a new type of graph to do this, it’s called a <span class="purple">bar plot</span>.</p>
+<div class="fragment">
+<p>For this we use <code>geom_bar()</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb33-2"><a href="#cb33-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span>  sickness))<span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/barchart1-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-many-students-were-and-were-not-sick" class="slide level2">
+<h2>How many students were and were not sick ?</h2>
+<p>As well as the bar plot, we can also use the <code>count()</code> command</p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">count</span>(sickness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  sickness     n
+  &lt;chr&gt;    &lt;int&gt;
+1 no          18
+2 yes         11</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="what-is-making-the-students-sick" class="slide level2">
+<h2>What is making the students sick ?</h2>
+<p>Sickness summarises all of the symptoms. Now it’s time to get specific!</p>
+<div class="fragment">
+<p>Can you make some other bar plots to see what the students were sick with?</p>
+</div>
+<div class="fragment">
+<p>💡 Remember we can use <code>colnames(outbreak_data)</code> to find out what information we have in <code>outbreak_data</code> ! . . .</p>
+<p><span class="purple">You have five minutes to try and explore making some of your own plots</span></p>
+<p>🤩 You might also like to try customising your plot. Remember we can change the colour by specifying <code>fill =</code> within the <code>geom_bar()</code> command. You might also like to try <code>aes(fill = )</code>.</p>
+</div>
+</section>
+<section id="shortness-of-breath" class="slide level2">
+<h2>Shortness of breath</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb36-2"><a href="#cb36-2"></a>         <span class="fu">aes</span>(<span class="at">x =</span> shortness_of_breath))<span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> shortness_of_breath))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/shortness_breath-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="what-have-you-found-what-symptoms-are-the-most-common" class="slide level2" data-menu-title="Are the students feeling sick ?" data-background-color="#935d94" style="font-size:70px;padding: 5px ">
+<h2>🧐 What have you found? What symptoms are the most common ?</h2>
+</section>
+<section id="reorganising-our-symptoms-data" class="slide level2">
+<h2>Reorganising our symptoms data</h2>
+<p>Data can be formatted in different ways.</p>
+<p>For example, prioritise having one row per individual with lots of columns</p>
+<div class="fragment">
+<p>This is like our <code>outbreak_data</code></p>
+</div>
+<div class="fragment">
+<p>Or sometimes we can change the format and so instead we have a long list of one observation per row.</p>
+</div>
+<div class="fragment">
+<p>This is what we have in our <code>symptoms</code> data.</p>
+</div>
+<div class="fragment">
+<p>For the next few plots we are going to use <code>symptoms</code> and not <code>outbreak_data</code>, however they record exactly the same thing</p>
+</div>
+</section>
+<section id="bringing-all-the-symptoms-together" class="slide level2">
+<h2>Bringing all the symptoms together</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> symptoms,</span>
+<span id="cb37-2"><a href="#cb37-2"></a>       <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/symptoms_all-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bringing-all-the-symptoms-togther" class="slide level2">
+<h2>Bringing all the symptoms togther</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-output-location="fragment">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide_v2_files/figure-revealjs/symptoms_all2-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>This doesn’t necessarily help us to decide what is making the students sick because they are not separated as to whether they were <span class="purple">sick</span> or not</p></li>
+<li class="fragment"><p>We really want to separate those that have a <span class="purple">YES</span> in <code>Sickness</code></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="we-can-filter-this-list-to-just-those-that-are-sick" class="slide level2">
+<h2>We can filter this list to just those that are sick !</h2>
+<p>This needs the <code>filter()</code> command</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>symptoms_sick <span class="ot">&lt;-</span> symptoms <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">filter</span>(sickness<span class="sc">==</span><span class="st">"yes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</section>
+<section id="now-what-symptoms-do-the-sick-students-have" class="slide level2">
+<h2>Now, what symptoms do the sick students have ?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> symptoms_sick,</span>
+<span id="cb39-2"><a href="#cb39-2"></a>       <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"What symptoms do the sick students have ?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<p><img data-src="slide_v2_files/figure-revealjs/bar_sick-1.png" width="576"></p>
+</div>
+</div>
+</section>
+<section id="interpreting-our-data" class="slide level2">
+<h2>Interpreting our data</h2>
+
+<img data-src="slide_v2_files/figure-revealjs/cause_sickness-1.png" width="960" class="r-stretch"><p>What does this graph tell us?</p>
+<ul>
+<li class="fragment"><p>What are the symptoms of those that are sick?</p></li>
+<li class="fragment"><p>What might be some causes of illness that give these symptoms?</p></li>
+</ul>
+</section>
+<section id="likely-cause" class="slide level2">
+<h2>Likely cause…</h2>
+</section></section>
+<section>
+<section id="salmonella" class="title-slide slide level1 center" data-background-color="#935d94">
+<h1>Salmonella</h1>
+
+</section>
+<section id="what-is-salmonella" class="slide level2">
+<h2>What is <a href="https://www.cdc.gov/salmonella/general/index.html">salmonella</a>?</h2>
+<ul>
+<li class="fragment"><p>A bacterial infection</p></li>
+<li class="fragment"><p>Commonly from contaminated food</p></li>
+<li class="fragment"><p>Examples…undercooked chicken, raw egg, insufficient cleaning</p></li>
+<li class="fragment"><p>You can start to feel sick within 6 to 36 hours after eating</p></li>
+</ul>
+</section>
+<section id="but-how-did-the-students-get-sick" class="slide level2" data-menu-title="Where did the students get sick" data-background-color="#935d94" style="font-size:70px;padding: 5px">
+<h2>But how did the students get sick ?</h2>
+</section>
+<section id="challenge-where-did-the-students-get-sick" class="slide level2">
+<h2>Challenge: Where did the students get sick?</h2>
+<p>🎨 At the gallery?</p>
+<div class="fragment">
+<p>🚌 On the bus?</p>
+</div>
+<div class="fragment">
+<p>🍲 At lunch?</p>
+</div>
+</section>
+<section id="wait-we-have-some-more-information" class="slide level2">
+<h2>WAIT ! We have some more information</h2>
+<p>🍲 We have just been sent some information about where the student’s ate lunch !</p>
+<div class="fragment">
+<p>They ate at three different restaurants !</p>
+<div class="cell">
+
+</div>
+</div>
+</section>
+<section id="plot-where-the-students-ate-their-lunch" class="slide level2">
+<h2>Plot where the students ate their lunch…</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">ggmap</span>(melb_map)<span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>   <span class="fu">geom_point</span>(<span class="at">data=</span>map_data, <span class="fu">aes</span>(<span class="at">x =</span>long, <span class="at">y =</span> lat, <span class="at">colour =</span> sickness), <span class="at">size =</span> <span class="dv">12</span>, <span class="at">shape =</span> <span class="dv">1</span>,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<p><img data-src="slide_v2_files/figure-revealjs/plot_melb_map-1.png" width="960"></p>
+</div>
+</div>
+</section>
+<section id="this-was-based-on-a-real-life-outbreak-in-melbourne" class="slide level2">
+<h2>This was based on a real life outbreak in Melbourne !</h2>
+
+<img data-src="abc_news.png" class="r-stretch"><p><a href="https://www.abc.net.au/news/2015-08-25/raw-egg-mayonnaise-blamed-for-langham-hotel-salmonella-outbreak/6722062">ABC New 2015</a></p>
+</section>
+<section id="today-we-have-learnt" class="slide level2">
+<h2>Today we have learnt…</h2>
+<div class="fragment">
+<p>🦠 what are pathogens and what are outbreaks</p>
+</div>
+<div class="fragment">
+<p>🌎 Who are epidemiologists</p>
+</div>
+<div class="fragment">
+<p>🔢 What is R</p>
+</div>
+<div class="fragment">
+<p>📊 How to make plots with ggplot</p>
+</div>
+<div class="fragment">
+<p>📈 How to organise and arrange complex data</p>
+</div>
+</section>
+<section id="whats-something-that-youve-learnt-today" class="slide level2" data-background-color="#935d94" style="font-size:70px;padding: 5px">
+<h2>🤠 What’s something that you’ve learnt today?</h2>
+</section>
+<section id="do-you-want-to-learn-more" class="slide level2">
+<h2>Do you want to learn more?</h2>
+<p><a href="https://bookdown.org/dionne_argy/Workshop/">Our online book of today’s lesson</a></p>
+<div class="fragment">
+<p><a href="https://education.rstudio.com/learn/beginner/">RStudio Education for Beginners</a></p>
+<p><a href="https://r4ds.had.co.nz/">R for Data Science</a></p>
+<p><a href="https://epirhandbook.com/en/">The Epidemiologist R Handbook</a></p>
+<p><a href="https://rladiessydney.org/courses/ryouwithme/">R You With Me</a></p>
+<p><a href="https://r-graph-gallery.com/">R-Graph Gallery</a></p>
+</div>
+</section>
+<section id="and-thank-you-to" class="slide level2">
+<h2>And thank you to…</h2>
+<div class="fragment">
+<p><img data-src="posit.jpg"></p>
+</div>
+<div class="fragment">
+<p>It Takes a Spark !</p>
+</div>
+<div class="fragment">
+<p>and to all of you for helping solve the outbreak !</p>
+<p><img src="logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slide_v2_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slide_v2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slide_v2_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slide_v2_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        setTimeout(function() {
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          let href = ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>
