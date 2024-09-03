@@ -7,7 +7,7 @@
   <title>Chapter 7 Challenge Two | Become a disease detective: Solve an outbreak</title>
   <meta name="description" content="<p>This is a step-by-step guide for the presentation by
 R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Challenge Two | Become a disease detective: Solve an outbreak" />
   <meta property="og:type" content="book" />
@@ -26,7 +26,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 <meta name="author" content="R-Ladies Melbourne" />
 
 
-<meta name="date" content="2023-11-16" />
+<meta name="date" content="2024-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -131,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -184,7 +185,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#bacteria"><i class="fa fa-check"></i><b>2.4</b> Bacteria</a>
 <ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcernas-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcernas</em>: Buruli ulcer</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcerans-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcerans</em>: Buruli ulcer</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#yersinia-pestis-black-death"><i class="fa fa-check"></i><em>Yersinia pestis</em>: Black Death</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#who-are-real-life-disease-detectives"><i class="fa fa-check"></i><b>2.5</b> Who are real-life disease detectives?</a></li>
@@ -273,9 +274,9 @@ div.csl-indent {
 <div id="we-have-some-more-information" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> We have some more information<a href="challenge-two.html#we-have-some-more-information" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We have just been sent some information about where the student’s ate lunch. They ate at three different restaurants!</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb44-1"><a href="challenge-two.html#cb44-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggmap</span>(melb_map)<span class="sc">+</span></span>
-<span id="cb44-2"><a href="challenge-two.html#cb44-2" tabindex="-1"></a><span class="sc">+</span>    <span class="fu">geom_point</span>(<span class="at">data=</span>map_data, <span class="fu">aes</span>(<span class="at">x =</span>long, <span class="at">y =</span> lat, <span class="at">colour =</span> sickness), <span class="at">size =</span> <span class="dv">12</span>, <span class="at">shape =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb49-1"><a href="challenge-two.html#cb49-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggmap</span>(melb_map)<span class="sc">+</span></span>
+<span id="cb49-2"><a href="challenge-two.html#cb49-2" tabindex="-1"></a><span class="sc">+</span>    <span class="fu">geom_point</span>(<span class="at">data=</span>map_data, <span class="fu">aes</span>(<span class="at">x =</span>long, <span class="at">y =</span> lat, <span class="at">colour =</span> sickness), <span class="at">size =</span> <span class="dv">12</span>, <span class="at">shape =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="based-on-a-real-life-outbreak-in-melbourne" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Based on a real life outbreak in Melbourne !<a href="challenge-two.html#based-on-a-real-life-outbreak-in-melbourne" class="anchor-section" aria-label="Anchor link to header"></a></h2>

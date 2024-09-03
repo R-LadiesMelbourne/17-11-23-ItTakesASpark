@@ -7,7 +7,7 @@
   <title>Chapter 4 The Basics | Become a disease detective: Solve an outbreak</title>
   <meta name="description" content="<p>This is a step-by-step guide for the presentation by
 R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 The Basics | Become a disease detective: Solve an outbreak" />
   <meta property="og:type" content="book" />
@@ -26,7 +26,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 <meta name="author" content="R-Ladies Melbourne" />
 
 
-<meta name="date" content="2023-11-16" />
+<meta name="date" content="2024-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -131,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -184,7 +185,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#bacteria"><i class="fa fa-check"></i><b>2.4</b> Bacteria</a>
 <ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcernas-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcernas</em>: Buruli ulcer</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcerans-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcerans</em>: Buruli ulcer</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#yersinia-pestis-black-death"><i class="fa fa-check"></i><em>Yersinia pestis</em>: Black Death</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#who-are-real-life-disease-detectives"><i class="fa fa-check"></i><b>2.5</b> Who are real-life disease detectives?</a></li>
@@ -268,16 +269,16 @@ div.csl-indent {
 <h2><span class="header-section-number">4.1</span> R can be our calculator<a href="the-basics.html#r-can-be-our-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Addition (use <code>+</code>).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="the-basics.html#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code></pre></div>
-<pre class="Rout"><code>[1] 4</code></pre>
+<pre class="rout"><code>[1] 4</code></pre>
 <p>Multiplication (use <code>*</code>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="the-basics.html#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">6</span></span></code></pre></div>
-<pre class="Rout"><code>[1] 12</code></pre>
+<pre class="rout"><code>[1] 12</code></pre>
 <p>Division (use <code>/</code>).</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="the-basics.html#cb5-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">150</span><span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
-<pre class="Rout"><code>[1] 50</code></pre>
+<pre class="rout"><code>[1] 50</code></pre>
 <p>…anything is possible</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="the-basics.html#cb7-1" tabindex="-1"></a><span class="sc">&gt;</span> ((<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)<span class="sc">*</span><span class="dv">8</span>)<span class="sc">/</span><span class="dv">123</span></span></code></pre></div>
-<pre class="Rout"><code>[1] 0.3252033</code></pre>
+<pre class="rout"><code>[1] 0.3252033</code></pre>
 <div id="teaching_moment_1" class="yellowbox">
 <p>💡 Type in your numbers either within the <strong>workshop.R</strong> file (TOP-RIGHT) or within the <strong>console</strong> (BOTTOM-RIGHT). Then to run - click <strong>Run</strong> at the top of the <strong>.R</strong> script or type <code>ctrl/cmd</code> + <code>enter</code>. The answer prints in the <strong>console</strong>.</p>
 <p align="center" width="100%">
@@ -291,19 +292,19 @@ div.csl-indent {
 <p>We can use <code>&lt;-</code> or <code>=</code></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="the-basics.html#cb9-1" tabindex="-1"></a><span class="sc">&gt;</span> my_name <span class="ot">&lt;-</span> <span class="st">&quot;Caitlin&quot;</span></span>
 <span id="cb9-2"><a href="the-basics.html#cb9-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;My name is&quot;</span>, my_name)</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;My name is Caitlin&quot;</code></pre>
+<pre class="rout"><code>[1] &quot;My name is Caitlin&quot;</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="the-basics.html#cb11-1" tabindex="-1"></a><span class="sc">&gt;</span> several_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Caitlin&quot;</span>, <span class="st">&quot;Dionne&quot;</span>, <span class="st">&quot;Lauren&quot;</span>)</span>
 <span id="cb11-2"><a href="the-basics.html#cb11-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;My name is&quot;</span>, several_names)</span></code></pre></div>
-<pre class="Rout"><code>[1] &quot;My name is Caitlin&quot; &quot;My name is Dionne&quot;  &quot;My name is Lauren&quot; </code></pre>
+<pre class="rout"><code>[1] &quot;My name is Caitlin&quot; &quot;My name is Dionne&quot;  &quot;My name is Lauren&quot; </code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="the-basics.html#cb13-1" tabindex="-1"></a><span class="sc">&gt;</span> a_number <span class="ot">&lt;-</span> <span class="dv">137</span></span>
 <span id="cb13-2"><a href="the-basics.html#cb13-2" tabindex="-1"></a><span class="sc">&gt;</span> another_number <span class="ot">&lt;-</span> <span class="dv">120</span></span>
 <span id="cb13-3"><a href="the-basics.html#cb13-3" tabindex="-1"></a><span class="sc">&gt;</span> </span>
 <span id="cb13-4"><a href="the-basics.html#cb13-4" tabindex="-1"></a><span class="er">&gt;</span> a_number <span class="sc">*</span> another_number</span></code></pre></div>
-<pre class="Rout"><code>[1] 16440</code></pre>
+<pre class="rout"><code>[1] 16440</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="the-basics.html#cb15-1" tabindex="-1"></a><span class="sc">&gt;</span> a_number <span class="sc">/</span> another_number</span></code></pre></div>
-<pre class="Rout"><code>[1] 1.141667</code></pre>
+<pre class="rout"><code>[1] 1.141667</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="the-basics.html#cb17-1" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">2</span><span class="sc">*</span>a_number) <span class="sc">+</span> another_number</span></code></pre></div>
-<pre class="Rout"><code>[1] 394</code></pre>
+<pre class="rout"><code>[1] 394</code></pre>
 <div id="teaching_moment_2" class="yellowbox">
 <p>💡 Students are encouraged to make their own variable names and get used to R coding symbols</p>
 </div>

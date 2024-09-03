@@ -2,3 +2,4 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "01-intro.Rmd", "02-the-situation.Rmd", "03-exercise-one.Rmd", "04-exercise-two.Rmd", "05-task-one.Rmd", "06-task-two.Rmd", "07-references.Rmd"]

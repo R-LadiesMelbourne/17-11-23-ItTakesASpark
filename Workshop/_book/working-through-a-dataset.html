@@ -7,7 +7,7 @@
   <title>Chapter 5 Working through a dataset | Become a disease detective: Solve an outbreak</title>
   <meta name="description" content="<p>This is a step-by-step guide for the presentation by
 R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Working through a dataset | Become a disease detective: Solve an outbreak" />
   <meta property="og:type" content="book" />
@@ -26,7 +26,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 <meta name="author" content="R-Ladies Melbourne" />
 
 
-<meta name="date" content="2023-11-16" />
+<meta name="date" content="2024-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23,</p>" />
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -131,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -184,7 +185,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#bacteria"><i class="fa fa-check"></i><b>2.4</b> Bacteria</a>
 <ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcernas-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcernas</em>: Buruli ulcer</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#mycobacterium-ulcerans-buruli-ulcer"><i class="fa fa-check"></i><em>Mycobacterium ulcerans</em>: Buruli ulcer</a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#yersinia-pestis-black-death"><i class="fa fa-check"></i><em>Yersinia pestis</em>: Black Death</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#who-are-real-life-disease-detectives"><i class="fa fa-check"></i><b>2.5</b> Who are real-life disease detectives?</a></li>
@@ -283,12 +284,10 @@ div.csl-indent {
 <h2><span class="header-section-number">5.2</span> What does <code>outbreak_data</code> look like ?<a href="working-through-a-dataset.html#what-does-outbreak_data-look-like" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The number one step in data analysis is looking at the data we have to work with. For this, we are going to use our first pre-installed command called <code>colnames()</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb20-1"><a href="working-through-a-dataset.html#cb20-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">colnames</span>(outbreak_data)</span></code></pre></div>
-<pre class="Rout"><code> [1] &quot;firstname&quot;           &quot;class&quot;               &quot;height&quot;              &quot;weight&quot;              &quot;age&quot;                
- [6] &quot;sex&quot;                 &quot;temperature&quot;         &quot;sickness&quot;            &quot;shortness_of_breath&quot; &quot;chills&quot;             
-[11] &quot;palpitation&quot;         &quot;bloody_stools&quot;       &quot;pain_chest&quot;          &quot;abdominal_cramps&quot;    &quot;dizziness&quot;          
-[16] &quot;nausea&quot;              &quot;vomiting&quot;            &quot;vertigo&quot;             &quot;cough&quot;               &quot;fever&quot;              
-[21] &quot;diarrhea&quot;            &quot;constipation&quot;        &quot;headache&quot;            &quot;pain_abdominal&quot;      &quot;throat_sore&quot;        
-[26] &quot;muscle_pains&quot;       </code></pre>
+<pre class="rout"><code> [1] &quot;firstname&quot;           &quot;class&quot;               &quot;height&quot;              &quot;weight&quot;              &quot;age&quot;                 &quot;sex&quot;                 &quot;temperature&quot;        
+ [8] &quot;sickness&quot;            &quot;shortness_of_breath&quot; &quot;chills&quot;              &quot;palpitation&quot;         &quot;bloody_stools&quot;       &quot;pain_chest&quot;          &quot;abdominal_cramps&quot;   
+[15] &quot;dizziness&quot;           &quot;nausea&quot;              &quot;vomiting&quot;            &quot;vertigo&quot;             &quot;cough&quot;               &quot;fever&quot;               &quot;diarrhea&quot;           
+[22] &quot;constipation&quot;        &quot;headache&quot;            &quot;pain_abdominal&quot;      &quot;throat_sore&quot;         &quot;muscle_pains&quot;       </code></pre>
 <ul>
 <li>Can you find <code>outbreak_data</code> in the environment pane?</li>
 <li>What happens if you click on it there?</li>
@@ -304,23 +303,37 @@ div.csl-indent {
 </ul>
 <p>To look specifically at <strong>one column</strong> we can <strong>select</strong> the column using a <strong>pipe</strong> or <code>%&gt;%</code>.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb22-1"><a href="working-through-a-dataset.html#cb22-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(height)</span></code></pre></div>
+<pre class="rout"><code># A tibble: 29 × 1
+   height
+    &lt;dbl&gt;
+ 1   61.7
+ 2   60  
+ 3   60.5
+ 4   61.7
+ 5   62  
+ 6   62.3
+ 7   60.9
+ 8   60.3
+ 9   62.7
+10   61  
+# ℹ 19 more rows</code></pre>
 </div>
 <div id="visualising-data" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Visualising data<a href="working-through-a-dataset.html#visualising-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The types of data we have to work with will determine how it is best to visualise !</p>
 <p>A <span style="color:purple">scatter plot</span>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb23-1"><a href="working-through-a-dataset.html#cb23-1" tabindex="-1"></a><span class="sc">&gt;</span> mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a href="working-through-a-dataset.html#cb23-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb23-3"><a href="working-through-a-dataset.html#cb23-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb23-4"><a href="working-through-a-dataset.html#cb23-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb24-1"><a href="working-through-a-dataset.html#cb24-1" tabindex="-1"></a><span class="sc">&gt;</span> mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="working-through-a-dataset.html#cb24-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb24-3"><a href="working-through-a-dataset.html#cb24-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb24-4"><a href="working-through-a-dataset.html#cb24-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Notice both the x and the y-axis are things we can count or measure.</p>
 <p>A <span style="color:purple">boxplot</span>:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb24-1"><a href="working-through-a-dataset.html#cb24-1" tabindex="-1"></a><span class="sc">&gt;</span> mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb24-2"><a href="working-through-a-dataset.html#cb24-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb24-3"><a href="working-through-a-dataset.html#cb24-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb24-4"><a href="working-through-a-dataset.html#cb24-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="working-through-a-dataset.html#cb25-1" tabindex="-1"></a><span class="sc">&gt;</span> mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="working-through-a-dataset.html#cb25-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb25-3"><a href="working-through-a-dataset.html#cb25-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb25-4"><a href="working-through-a-dataset.html#cb25-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Notice the y-axis are things we count or measure but the x-axis are specific groups.</p>
 </div>
 <div id="plotting-our-data" class="section level2 hasAnchor" number="5.5">
@@ -333,49 +346,49 @@ div.csl-indent {
 <li>What kind of graph do we want to make?</li>
 </ol>
 <p>Other ideas like colour, design, groups … we’ll get to this later!</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb25-1"><a href="working-through-a-dataset.html#cb25-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb25-2"><a href="working-through-a-dataset.html#cb25-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb26-1"><a href="working-through-a-dataset.html#cb26-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb26-2"><a href="working-through-a-dataset.html#cb26-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>These are both pieces of data represented by numbers - how else might we record data?</p>
 <div id="how-to-ask-ggplot-to-plot-outbreak_data" class="section level3 hasAnchor" number="5.5.1">
 <h3><span class="header-section-number">5.5.1</span> How to ask ggplot to plot <code>outbreak_data</code><a href="working-through-a-dataset.html#how-to-ask-ggplot-to-plot-outbreak_data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb26-1"><a href="working-through-a-dataset.html#cb26-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="working-through-a-dataset.html#cb26-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="working-through-a-dataset.html#cb26-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="working-through-a-dataset.html#cb27-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="working-through-a-dataset.html#cb27-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="working-through-a-dataset.html#cb27-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Next we choose what kind of graph we need</p>
 </div>
 <div id="we-can-use-geom_point-or-geom_boxplot" class="section level3 hasAnchor" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> We can use <code>geom_point()</code> or <code>geom_boxplot()</code><a href="working-through-a-dataset.html#we-can-use-geom_point-or-geom_boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s first try <code>geom_point()</code>. We use the <code>+</code> sign to add it to our first ggplot command.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb27-1"><a href="working-through-a-dataset.html#cb27-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="working-through-a-dataset.html#cb27-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height)) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="working-through-a-dataset.html#cb27-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb28-1"><a href="working-through-a-dataset.html#cb28-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="working-through-a-dataset.html#cb28-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> height)) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="working-through-a-dataset.html#cb28-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Where would we put <code>geom_boxplot()</code> ?</p>
 </div>
 <div id="now-swap-height-for-temperature-on-the-y-axis." class="section level3 hasAnchor" number="5.5.3">
 <h3><span class="header-section-number">5.5.3</span> Now swap <u>height</u> for <u>temperature</u> on the y-axis.<a href="working-through-a-dataset.html#now-swap-height-for-temperature-on-the-y-axis." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb28-1"><a href="working-through-a-dataset.html#cb28-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb28-2"><a href="working-through-a-dataset.html#cb28-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
-<span id="cb28-3"><a href="working-through-a-dataset.html#cb28-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="working-through-a-dataset.html#cb29-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb29-2"><a href="working-through-a-dataset.html#cb29-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb29-3"><a href="working-through-a-dataset.html#cb29-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="lets-customise" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Let’s customise!<a href="working-through-a-dataset.html#lets-customise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Can you change size, shape and colour…what kinds of plots can you make ?</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb29-1"><a href="working-through-a-dataset.html#cb29-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb29-2"><a href="working-through-a-dataset.html#cb29-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
-<span id="cb29-3"><a href="working-through-a-dataset.html#cb29-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="working-through-a-dataset.html#cb30-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb30-2"><a href="working-through-a-dataset.html#cb30-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb30-3"><a href="working-through-a-dataset.html#cb30-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <div id="boxplots-to-create-summaries" class="section level3 hasAnchor" number="5.6.1">
 <h3><span class="header-section-number">5.6.1</span> Boxplots to create summaries<a href="working-through-a-dataset.html#boxplots-to-create-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Can you make a <strong>boxplot</strong> with <strong>Class</strong> on the x-axis and <strong>Temperature</strong> on the y-axis? A boxplot summarising <u>temperature</u> in the four <u>classes</u>.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb30-1"><a href="working-through-a-dataset.html#cb30-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb30-2"><a href="working-through-a-dataset.html#cb30-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
-<span id="cb30-3"><a href="working-through-a-dataset.html#cb30-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb31-1"><a href="working-through-a-dataset.html#cb31-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb31-2"><a href="working-through-a-dataset.html#cb31-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature))<span class="sc">+</span></span>
+<span id="cb31-3"><a href="working-through-a-dataset.html#cb31-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="teaching_moment_4" class="yellowbox">
 <p>💡 Boxplots provide us with an informative summary of the data in our groups
 - The center line gives the median
@@ -388,16 +401,16 @@ div.csl-indent {
 </div>
 <p><br />
 </p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb31-1"><a href="working-through-a-dataset.html#cb31-1" tabindex="-1"></a><span class="sc">&gt;</span> ?<span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="working-through-a-dataset.html#cb32-1" tabindex="-1"></a><span class="sc">&gt;</span> ?<span class="fu">geom_boxplot</span>()</span></code></pre></div>
 </div>
 <div id="how-can-we-use-fill-to-learn-more" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> How can we use fill to learn more ?<a href="working-through-a-dataset.html#how-can-we-use-fill-to-learn-more" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>fill</code> can be specified as <span style="color:purple">aesthetics</span> like the x and y axis.
 Can you specify the <code>fill</code> with our <code>Sickness</code> information about each student ?</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb32-1"><a href="working-through-a-dataset.html#cb32-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb32-2"><a href="working-through-a-dataset.html#cb32-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness)) <span class="sc">+</span></span>
-<span id="cb32-3"><a href="working-through-a-dataset.html#cb32-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="working-through-a-dataset.html#cb33-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb33-2"><a href="working-through-a-dataset.html#cb33-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness)) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="working-through-a-dataset.html#cb33-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="what-does-temperature-tell-us-about-how-the-students-were-feeling" class="section level3 hasAnchor" number="5.6.3">
 <h3><span class="header-section-number">5.6.3</span> What does temperature tell us about how the students were feeling?<a href="working-through-a-dataset.html#what-does-temperature-tell-us-about-how-the-students-were-feeling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -409,11 +422,11 @@ Can you specify the <code>fill</code> with our <code>Sickness</code> information
 </div>
 <div id="time-to-give-our-plot-a-title" class="section level3 hasAnchor" number="5.6.4">
 <h3><span class="header-section-number">5.6.4</span> Time to give our plot a title<a href="working-through-a-dataset.html#time-to-give-our-plot-a-title" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb33-1"><a href="working-through-a-dataset.html#cb33-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
-<span id="cb33-2"><a href="working-through-a-dataset.html#cb33-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness))<span class="sc">+</span></span>
-<span id="cb33-3"><a href="working-through-a-dataset.html#cb33-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb33-4"><a href="working-through-a-dataset.html#cb33-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Make a title here !&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="working-through-a-dataset.html#cb34-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb34-2"><a href="working-through-a-dataset.html#cb34-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> temperature, <span class="at">fill =</span> sickness))<span class="sc">+</span></span>
+<span id="cb34-3"><a href="working-through-a-dataset.html#cb34-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb34-4"><a href="working-through-a-dataset.html#cb34-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Make a title here !&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Make it something informative that describes the plot you’ve just made and why people would be interested to look at it</p>
 </div>
 </div>
@@ -421,8 +434,12 @@ Can you specify the <code>fill</code> with our <code>Sickness</code> information
 <h2><span class="header-section-number">5.7</span> Generating summaries<a href="working-through-a-dataset.html#generating-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This symbol <code>%&gt;%</code> is used to send our data into another command such as <code>summarise()</code>.</p>
 <p>As the name would suggest, we can generate summaries, such as calculating the <span style="color:purple">median</span>.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb34-1"><a href="working-through-a-dataset.html#cb34-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
-<span id="cb34-2"><a href="working-through-a-dataset.html#cb34-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="working-through-a-dataset.html#cb35-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="working-through-a-dataset.html#cb35-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code></pre></div>
+<pre class="rout"><code># A tibble: 1 × 1
+  median
+   &lt;dbl&gt;
+1     37</code></pre>
 <div id="teaching_moment_5" class="yellowbox">
 <p>💡 We can also calculate other summary statistics in R. Such as:</p>
 <p>outbreak_data %&gt;%
@@ -437,15 +454,28 @@ mean_age = mean(age))</p>
 <div id="we-can-also-use-group_by-with-multiple-groups" class="section level2 hasAnchor" number="5.8">
 <h2><span class="header-section-number">5.8</span> We can also use <code>group_by()</code> with multiple groups<a href="working-through-a-dataset.html#we-can-also-use-group_by-with-multiple-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Just like our boxplot, we want to know the median temperature of the students, grouped by their <code>Class</code> and <code>Sickness</code> status. Try to do this by adding <code>group_by(Class, Sickness)</code>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb35-1"><a href="working-through-a-dataset.html#cb35-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
-<span id="cb35-2"><a href="working-through-a-dataset.html#cb35-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">group_by</span>(class, sickness) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-3"><a href="working-through-a-dataset.html#cb35-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb37-1"><a href="working-through-a-dataset.html#cb37-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb37-2"><a href="working-through-a-dataset.html#cb37-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">group_by</span>(class, sickness) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-3"><a href="working-through-a-dataset.html#cb37-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarise</span>(<span class="at">median =</span> <span class="fu">median</span>(temperature))</span></code></pre></div>
+<pre><code>`summarise()` has grouped output by &#39;class&#39;. You can override using the `.groups` argument.</code></pre>
+<pre class="rout"><code># A tibble: 8 × 3
+# Groups:   class [4]
+  class sickness median
+  &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;
+1 A     no         36.5
+2 A     yes        39  
+3 B     no         37  
+4 B     yes        39  
+5 C     no         37  
+6 C     yes        39  
+7 D     no         37  
+8 D     yes        39  </code></pre>
 <p>How can we relate this to the boxplot we made earlier ?</p>
 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-ggmap" class="csl-entry">
 Kahle, David, Hadley Wickham, and Scott Jackson. 2023. <em>Ggmap: Spatial Visualization with Ggplot2</em>. <a href="https://github.com/dkahle/ggmap">https://github.com/dkahle/ggmap</a>.
 </div>
