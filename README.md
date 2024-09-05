@@ -4,4 +4,4 @@ R Ladies Melbourne is excited to present at this year's [It Takes a Spark Confe
 R Ladies Melbourne's workshop is title "Become a disease detective - solve an outbreak!" and all our learning material is available online
 
 R Ladies Melbourne is excited to present at this year's It Takes a Spark Conference, organised for students and teachers to participate, learn and be inspired by current advances in Science, Technology, Engineering and Maths. Caitlin, Dionne are Lauren are presenting this year's workshop.
-R Ladies Melbourne's workshop is title "Become a disease detective - solve an outbreak!" and all our learning material is available [online](https://bookdown.org/dionne_argy/Workshop/).
+R Ladies Melbourne's workshop is title "Become a disease detective - solve an outbreak!" and all our learning material is available [online](https://r-ladiesmelbourne.github.io/17-11-23-ItTakesASpark/).
