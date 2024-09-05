@@ -1,7 +1,6 @@
 bookdown::gitbook:
   css: style.css
   config:
-    output_dir: docs
     toc:
       before: |
         <li><a href="./">R-Ladies Melbourne: It takes a spark</a></li>
