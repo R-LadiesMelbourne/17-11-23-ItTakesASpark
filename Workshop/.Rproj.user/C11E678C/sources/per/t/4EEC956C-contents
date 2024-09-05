@@ -1,0 +1,28 @@
+# The Situation
+
+**Unknown illness causes students to [fall ill]{style="color:purple"} at local school. Local authorities are unsure of the cause of this outbreak, but it appears to be linked to a recent excursion to Melbourne CBD**. 
+
+## The Excursion {.unnumbered}
+
+Students at a local school went into Melbourne to see an exhibition at the National Gallery of Victoria.
+
+- At 8am, they took the bus to the NGV.
+- They were in the gallery from 9am - 12pm.
+- They had lunch from 12pm - 2pm at three different locations
+- They went back to the gallery for another exhibition between 2 -4 pm
+- At 4pm they were back on the bus to go home
+
+## The Investigation {.unnumbered}
+
+And you have been given some information including:
+
+-   Name
+-   Class
+-   Age
+-   Sex
+-   Height
+-   Weight
+-   Was the student feeling sick
+-   What were their symptoms
+
+[**And we are going to do this in R !**]{style="color:purple"}
