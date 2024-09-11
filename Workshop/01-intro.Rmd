@@ -6,6 +6,8 @@ What will you learn today?
 2.  How can [**R**]{style="color:purple"} be used to investigate outbreaks?
 3.  Then [**YOU**]{style="color:purple"} are going to [**solve an outbreak**]{style="color:purple"}!
 
+The slides for this workshop can be found [here](https://r-ladiesmelbourne.github.io/It-Takes-a-Spark-Slides/#/TitleSlide)!
+
 ## What are infectious diseases?
 
 Infectious diseases are caused by certain microorganisms, such as [bacteria, viruses, parasites or funghi]{style="color:purple"}, and will make people (or animals) sick when they are exposed to these microorganisms. Most microorganisms don't make us sick, but some do, and these are known as [pathogens]{style="color:purple"}. There are lots of different ways that you might get an infectious disease. Some ways include breathing respiratory droplets, eating contaminated food or water, insect bites and many many more !

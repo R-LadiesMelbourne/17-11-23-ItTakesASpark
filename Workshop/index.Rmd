@@ -39,8 +39,6 @@ Caitlin, Dionne, and Lauren are from R Ladies Melbourne, and we are here because
 
 See the [R-Ladies global website](https://rladies.org/) or [R-Ladies Melbourne](https://www.meetup.com/rladies-melbourne) for more information! 
 
-The slides for this worksho can be found [here](https://r-ladiesmelbourne.github.io/It-Takes-a-Spark-Slides/#/TitleSlide).
-
 :::
 
 ::::
