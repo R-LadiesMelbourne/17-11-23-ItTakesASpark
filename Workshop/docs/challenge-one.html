@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 The Basics | Become a disease detective: Solve an outbreak</title>
+  <title>Chapter 6 Challenge One | Become a disease detective: Solve an outbreak</title>
   <meta name="description" content="<p>This is a step-by-step guide for the presentation by
 R-Ladies Melbourne for “It takes a spark” on 17-Nov-23 and 31-Oct-24</p>" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 The Basics | Become a disease detective: Solve an outbreak" />
+  <meta property="og:title" content="Chapter 6 Challenge One | Become a disease detective: Solve an outbreak" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a step-by-step guide for the presentation by
@@ -17,7 +17,7 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23 and 31-Oct-24</p>" />
   <meta name="github-repo" content="R-LadiesMelbourne" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 The Basics | Become a disease detective: Solve an outbreak" />
+  <meta name="twitter:title" content="Chapter 6 Challenge One | Become a disease detective: Solve an outbreak" />
   
   <meta name="twitter:description" content="<p>This is a step-by-step guide for the presentation by
 R-Ladies Melbourne for “It takes a spark” on 17-Nov-23 and 31-Oct-24</p>" />
@@ -33,8 +33,8 @@ R-Ladies Melbourne for “It takes a spark” on 17-Nov-23 and 31-Oct-24</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="Images/logo_favicon.png" type="image/x-icon" />
-<link rel="prev" href="the-situation.html"/>
-<link rel="next" href="working-through-a-dataset.html"/>
+<link rel="prev" href="working-through-a-dataset.html"/>
+<link rel="next" href="challenge-two.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -263,51 +263,117 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-basics" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> The Basics<a href="the-basics.html#the-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-can-be-our-calculator" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> R can be our calculator<a href="the-basics.html#r-can-be-our-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Addition (use <code>+</code>).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb1-1"><a href="the-basics.html#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code></pre></div>
-<pre class="rout"><code>[1] 4</code></pre>
-<p>Multiplication (use <code>*</code>).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb3-1"><a href="the-basics.html#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">6</span></span></code></pre></div>
-<pre class="rout"><code>[1] 12</code></pre>
-<p>Division (use <code>/</code>).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb5-1"><a href="the-basics.html#cb5-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">150</span><span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
-<pre class="rout"><code>[1] 50</code></pre>
-<p>…anything is possible</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="the-basics.html#cb7-1" tabindex="-1"></a><span class="sc">&gt;</span> ((<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)<span class="sc">*</span><span class="dv">8</span>)<span class="sc">/</span><span class="dv">123</span></span></code></pre></div>
-<pre class="rout"><code>[1] 0.3252033</code></pre>
-<div id="teaching_moment_1" class="yellowbox">
-<p>💡 Type in your numbers either within the <strong>workshop.R</strong> file (TOP-RIGHT) or within the <strong>console</strong> (BOTTOM-RIGHT). Then to run - click <strong>Run</strong> at the top of the <strong>.R</strong> script or type <code>ctrl/cmd</code> + <code>enter</code>. The answer prints in the <strong>console</strong>.</p>
-<p align="center" width="100%">
-<img width="600" src="Images/RStudio.png">
-</p>
+<div id="challenge-one" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Challenge One<a href="challenge-one.html#challenge-one" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="lets-focus-on-the-students-symptoms" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Let’s focus on the student’s symptoms<a href="challenge-one.html#lets-focus-on-the-students-symptoms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are going to use a new type of graph to do this, it’s called a <span style="color:purple">bar plot</span>.</p>
+<p>For this we use <code>geom_bar()</code></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb40-1"><a href="challenge-one.html#cb40-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb40-2"><a href="challenge-one.html#cb40-2" tabindex="-1"></a><span class="sc">+</span>          <span class="fu">aes</span>(<span class="at">x =</span>  sickness)) <span class="sc">+</span></span>
+<span id="cb40-3"><a href="challenge-one.html#cb40-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="how-many-students-were-and-were-not-sick" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> How many students were and were not sick ?<a href="challenge-one.html#how-many-students-were-and-were-not-sick" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As well as the bar plot, we can also use the <code>count()</code> command.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb41-1"><a href="challenge-one.html#cb41-1" tabindex="-1"></a><span class="sc">&gt;</span> outbreak_data <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="challenge-one.html#cb41-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">count</span>(sickness)</span></code></pre></div>
+<pre class="rout"><code># A tibble: 2 × 2
+  sickness     n
+  &lt;chr&gt;    &lt;int&gt;
+1 no          18
+2 yes         11</code></pre>
+</div>
+<div id="what-is-making-the-studens-sick" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> What is making the studens sick ?<a href="challenge-one.html#what-is-making-the-studens-sick" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sickness summarises all of the symptoms. Now it’s time to get specific!</p>
+<p>Can you make some other bar plots to see what the students were sick with?</p>
+<ul>
+<li>Remember we can use <code>colnames(outbreak_data)</code> to find out what information we have in <code>outbreak_data</code> !</li>
+<li>You might also like to try customising your plot.</li>
+<li>Remember we can change the colour by specifying <code>fill =</code> within the <code>geom_bar()</code> command. You might also like to try <code>aes(fill = )</code>.</li>
+</ul>
+</div>
+<div id="shortness-of-breath" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Shortness of breath<a href="challenge-one.html#shortness-of-breath" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb43-1"><a href="challenge-one.html#cb43-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> outbreak_data,</span>
+<span id="cb43-2"><a href="challenge-one.html#cb43-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">x =</span> shortness_of_breath))<span class="sc">+</span></span>
+<span id="cb43-3"><a href="challenge-one.html#cb43-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> shortness_of_breath))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>What have you found? What symptoms are the most common ?</p>
+</div>
+<div id="reorganising-our-symptoms-data" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Reorganising our symptoms data<a href="challenge-one.html#reorganising-our-symptoms-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data can be formatted in different ways. For example, prioritise having one row per individual with lots of columns. This is like our <code>outbreak_data</code>.</p>
+<p>Or sometimes we can change the format and so instead we have a long list of one observation per row. This is what we have in our <code>symptoms</code> data.</p>
+<p>For the next few plots we are going to use <code>symptoms</code> and not <code>outbreak_data</code>, however they record exactly the same thing</p>
+</div>
+<div id="bringing-all-the-symptoms-together" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Bringing all the symptoms together<a href="challenge-one.html#bringing-all-the-symptoms-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb44-1"><a href="challenge-one.html#cb44-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> symptoms,</span>
+<span id="cb44-2"><a href="challenge-one.html#cb44-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb44-3"><a href="challenge-one.html#cb44-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bringing-all-the-symptoms-togther" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Bringing all the symptoms togther<a href="challenge-one.html#bringing-all-the-symptoms-togther" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb45-1"><a href="challenge-one.html#cb45-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> symptoms,</span>
+<span id="cb45-2"><a href="challenge-one.html#cb45-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb45-3"><a href="challenge-one.html#cb45-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>This doesn’t necessarily help us to decide what is making the students sick because they are not separated as to whether they were <span style="color:purple">sick</span> or not. We really want to separate those that have a <span style="color:purple">YES</span> in <code>sickness</code>.</p>
+</div>
+<div id="we-can-filter-this-list-to-just-those-that-are-sick" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> We can filter this list to just those that are sick !<a href="challenge-one.html#we-can-filter-this-list-to-just-those-that-are-sick" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This needs the <code>filter()</code> command</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb46-1"><a href="challenge-one.html#cb46-1" tabindex="-1"></a><span class="sc">&gt;</span> symptoms_sick <span class="ot">&lt;-</span> symptoms <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="challenge-one.html#cb46-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">filter</span>(sickness<span class="sc">==</span><span class="st">&quot;yes&quot;</span>)</span></code></pre></div>
+</div>
+<div id="now-what-symptoms-do-the-sick-students-have" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Now, what symptoms do the sick students have ?<a href="challenge-one.html#now-what-symptoms-do-the-sick-students-have" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb47-1"><a href="challenge-one.html#cb47-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> symptoms_sick,</span>
+<span id="cb47-2"><a href="challenge-one.html#cb47-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb47-3"><a href="challenge-one.html#cb47-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb47-4"><a href="challenge-one.html#cb47-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;What symptoms do the sick students have ?&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="interpreting-our-data" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Interpreting our data<a href="challenge-one.html#interpreting-our-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb48-1"><a href="challenge-one.html#cb48-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(<span class="at">data =</span> symptoms_sick,</span>
+<span id="cb48-2"><a href="challenge-one.html#cb48-2" tabindex="-1"></a><span class="sc">+</span>        <span class="fu">aes</span>(<span class="at">y =</span> symptom, <span class="at">fill =</span> status))<span class="sc">+</span></span>
+<span id="cb48-3"><a href="challenge-one.html#cb48-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb48-4"><a href="challenge-one.html#cb48-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;What symptoms do the sick students have ?&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>What does this graph tell us?</p>
+<ul>
+<li><p>What are the symptoms of those that are sick?</p></li>
+<li><p>What might be some causes of illness that give these symptoms?</p></li>
+</ul>
+</div>
+<div id="what-is-the-mystery-disease" class="section level2 hasAnchor" number="6.11">
+<h2><span class="header-section-number">6.11</span> What is the mystery disease?<a href="challenge-one.html#what-is-the-mystery-disease" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Likely cause is … <span style="font-size: 2em;">Salmonella</span></p>
+<div style="display: flex;">
+<div>
+<p><img src="Images/salmonella.webp" width="500" /></p>
+</div>
+<div class="col">
+<p> </p>
+</div>
+<div>
+<p><strong>What is salmonella?</strong></p>
+<ul>
+<li><p>A bacterial infection</p></li>
+<li><p>Commonly from contaminated food</p></li>
+<li><p>Examples…undercooked chicken, raw egg, incomplete cleaning</p></li>
+<li><p>You can start to feel sick within 6 to 36 hours after eating</p></li>
+</ul>
 </div>
 </div>
-<div id="r-can-be-our-notebook" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> R can be our notebook<a href="the-basics.html#r-can-be-our-notebook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can <span style="color:purple">save</span> important information for later.</p>
-<p>We can use <code>&lt;-</code> or <code>=</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb9-1"><a href="the-basics.html#cb9-1" tabindex="-1"></a><span class="sc">&gt;</span> my_name <span class="ot">&lt;-</span> <span class="st">&quot;Joy&quot;</span></span>
-<span id="cb9-2"><a href="the-basics.html#cb9-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;My name is&quot;</span>, my_name)</span></code></pre></div>
-<pre class="rout"><code>[1] &quot;My name is Joy&quot;</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb11-1"><a href="the-basics.html#cb11-1" tabindex="-1"></a><span class="sc">&gt;</span> several_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Joy&quot;</span>, <span class="st">&quot;Anger&quot;</span>, <span class="st">&quot;Sadness&quot;</span>)</span>
-<span id="cb11-2"><a href="the-basics.html#cb11-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;My name is&quot;</span>, several_names)</span></code></pre></div>
-<pre class="rout"><code>[1] &quot;My name is Joy&quot;     &quot;My name is Anger&quot;   &quot;My name is Sadness&quot;</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb13-1"><a href="the-basics.html#cb13-1" tabindex="-1"></a><span class="sc">&gt;</span> a_number <span class="ot">&lt;-</span> <span class="dv">137</span></span>
-<span id="cb13-2"><a href="the-basics.html#cb13-2" tabindex="-1"></a><span class="sc">&gt;</span> another_number <span class="ot">&lt;-</span> <span class="dv">120</span></span>
-<span id="cb13-3"><a href="the-basics.html#cb13-3" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb13-4"><a href="the-basics.html#cb13-4" tabindex="-1"></a><span class="er">&gt;</span> a_number <span class="sc">*</span> another_number</span></code></pre></div>
-<pre class="rout"><code>[1] 16440</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb15-1"><a href="the-basics.html#cb15-1" tabindex="-1"></a><span class="sc">&gt;</span> a_number <span class="sc">/</span> another_number</span></code></pre></div>
-<pre class="rout"><code>[1] 1.141667</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb17-1"><a href="the-basics.html#cb17-1" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">2</span><span class="sc">*</span>a_number) <span class="sc">+</span> another_number</span></code></pre></div>
-<pre class="rout"><code>[1] 394</code></pre>
-<div id="teaching_moment_2" class="yellowbox">
-<p>💡 Students are encouraged to make their own variable names and get used to R coding symbols</p>
-</div>
+<p><strong>Examples in the media</strong></p>
+<p>See the Centres for Disease Control and Prevention (CDC) <a href="https://www.cdc.gov/foodsafety/communication/salmonella-food.html">website</a> and the World Health Organisation <a href="https://www.who.int/news-room/fact-sheets/detail/salmonella-(non-typhoidal)">website</a> for more information on this disease.</p>
+<p><span style="font-size: 2em;"><strong>But how did the students get sick ?</strong></span></p>
 
 </div>
 </div>
@@ -316,8 +382,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="the-situation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-through-a-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-through-a-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="challenge-two.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -348,7 +414,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-exercise-one.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-task-one.Rmd",
 "text": "Edit"
 },
 "history": {
