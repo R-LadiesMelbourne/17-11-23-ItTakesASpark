@@ -48,12 +48,12 @@ We can [save]{style="color:purple"} important information for later.
 We can use `<-` or `=`
 
 ```{r}
-my_name <- "Caitlin"
+my_name <- "Joy"
 paste("My name is", my_name)
 ```
 
 ```{r}
-several_names <- c("Caitlin", "Dionne", "Lauren")
+several_names <- c("Joy", "Anger", "Sadness")
 paste("My name is", several_names)
 ```
 
